@@ -26,8 +26,23 @@ const scrapFromCR = async () => {
 
     // console.log(chickenRepublicRefuel);
 
-    const chickenRepublicFriedRice = await page.$$eval(
-      "#sp-wp-carousel-pro-id-766 .slick-list .slick-slide",
+    // const chickenRepublicGrilledChicken = await page.$$eval(
+    //   "#sp-wp-carousel-pro-id-766 .slick-list .slick-slide",
+    //   (elements) =>
+    //     elements.map((e) => ({
+    //       title: e.querySelector(".wpcp-all-captions .wpcp-image-caption a")
+    //         .innerText,
+    //       description: e.querySelector(
+    //         ".wpcp-all-captions .wpcp-image-description"
+    //       ).innerText,
+    //       image: e.querySelector(".wpcp-slide-image img").src,
+    //     }))
+    // );
+
+    // console.log(chickenRepublicFriedRice);
+
+    const chickenRepublicGrilledChicken = await page.$$eval(
+      "#sp-wp-carousel-pro-id-798 .slick-list .slick-slide",
       (elements) =>
         elements.map((e) => ({
           title: e.querySelector(".wpcp-all-captions .wpcp-image-caption a")
@@ -39,7 +54,7 @@ const scrapFromCR = async () => {
         }))
     );
 
-    console.log(chickenRepublicFriedRice);
+    console.log(chickenRepublicGrilledChicken);
 
     await browser.close();
   } catch (error) {
