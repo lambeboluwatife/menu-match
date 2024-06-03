@@ -12,20 +12,34 @@ const scrapFromCR = async () => {
       // timeout: 60000,
     });
 
-    const chickenRepublicRefuel = await page.$$eval(
-      "#sp-wp-carousel-pro-id-1648 .slick-list .slick-slide",
+    // const chickenRepublicRefuel = await page.$$eval(
+    //   "#sp-wp-carousel-pro-id-1648 .slick-list .slick-slide",
+    //   (elements) =>
+    //     elements.map((e) => ({
+    //       title: e.querySelector(".wpcp-image-caption a").innerText,
+    //       description: e.querySelector(
+    //         ".wpcp-single-item .wpcp-image-description"
+    //       ).innerText,
+    //       image: e.querySelector(".wpcp-slide-image img").src,
+    //     }))
+    // );
+
+    // console.log(chickenRepublicRefuel);
+
+    const chickenRepublicFriedRice = await page.$$eval(
+      "#sp-wp-carousel-pro-id-766 .slick-list .slick-slide",
       (elements) =>
         elements.map((e) => ({
-          title: e.querySelector(".wpcp-image-caption a").innerText,
-          // price: e.querySelector(".card-body span").innerText,
+          title: e.querySelector(".wpcp-all-captions .wpcp-image-caption a")
+            .innerText,
           description: e.querySelector(
-            ".wpcp-single-item .wpcp-image-description"
+            ".wpcp-all-captions .wpcp-image-description"
           ).innerText,
           image: e.querySelector(".wpcp-slide-image img").src,
         }))
     );
 
-    console.log(chickenRepublicRefuel);
+    console.log(chickenRepublicFriedRice);
 
     await browser.close();
   } catch (error) {
